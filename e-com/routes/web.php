@@ -21,10 +21,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 
-Route::get('/', function () {
-    return view('frontend/index');
-});
+
 
 Route::get('/', function () { return view('frontend.index'); })->name('index');
+Route::get('/product', function () { return view('frontend.product'); })->name('product');
+Route::get('/testimonial', function () { return view('frontend.testimonial'); })->name('testimonial');
+Route::get('/why', function () { return view('frontend.why'); })->name('why');
+Route::get('/about', function () { return view('frontend.about'); })->name('about');
 
 
