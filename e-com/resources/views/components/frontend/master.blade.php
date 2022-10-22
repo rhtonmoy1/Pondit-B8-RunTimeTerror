@@ -8,7 +8,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <link rel="icon" href="{{asset('ui/frontend/images/fevicon.png')}}" type="image/gif" />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="{{asset('ui/frontend/css/font-awesome.min.css')}}" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
   <link href="{{asset('ui/frontend/css/style.css')}}" rel="stylesheet" />
@@ -137,7 +137,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
+                    <img src="{{asset('ui/frontend/images/slider-img.png')}}" alt="">
                   </div>
                 </div>
               </div>
@@ -161,7 +161,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
+                    <img src="{{asset('ui/frontend/images/slider-img.png')}}" alt="">
                   </div>
                 </div>
               </div>
@@ -185,7 +185,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
+                    <img src="{{asset('ui/frontend/images/p1.png')}}" alt="">
                   </div>
                 </div>
               </div>
@@ -221,7 +221,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p1.png" alt="">
+              <img src="{{asset('ui/frontend/images/p1.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -250,7 +250,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p2.png" alt="">
+              <img src="{{asset('ui/frontend/images/p3.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -279,7 +279,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p3.png" alt="">
+              <img src="{{asset('ui/frontend/images/p3.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -308,7 +308,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p4.png" alt="">
+              <img src="{{asset('ui/frontend/images/p4.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -337,7 +337,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p5.png" alt="">
+              <img src="{{asset('ui/frontend/images/p5.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -366,7 +366,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p6.png" alt="">
+              <img src="{{asset('ui/frontend/images/p6.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -395,7 +395,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p7.png" alt="">
+              <img src="{{asset('ui/frontend/images/p7.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -424,7 +424,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p8.png" alt="">
+              <img src="{{asset('ui/frontend/images/p9.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -453,7 +453,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/p9.png" alt="">
+              <img src="{{asset('ui/frontend/images/p9.png')}}" alt="">
               <a href="" class="add_cart_btn">
                 <span>
                   Add To Cart
@@ -513,7 +513,7 @@
         </div>
         <div class="col-md-6 px-0">
           <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
+            <img src="{{asset('ui/frontend/images/about-img.jpg')}}" alt="">
           </div>
         </div>
       </div>
@@ -535,7 +535,7 @@
         <div class="col-md-4">
           <div class="box ">
             <div class="img-box">
-              <img src="images/w1.png" alt="">
+              <img src="{{asset('ui/frontend/images/w1.png')}}" alt="">
             </div>
             <div class="detail-box">
               <h5>
@@ -550,7 +550,7 @@
         <div class="col-md-4">
           <div class="box ">
             <div class="img-box">
-              <img src="images/w2.png" alt="">
+              <img src="{{asset('ui/frontend/images/w2.png')}}" alt="">
             </div>
             <div class="detail-box">
               <h5>
@@ -565,7 +565,7 @@
         <div class="col-md-4">
           <div class="box ">
             <div class="img-box">
-              <img src="images/w3.png" alt="">
+              <img src="{{asset('ui/frontend/images/w3.png')}}" alt="">
             </div>
             <div class="detail-box">
               <h5>
@@ -615,7 +615,7 @@
                 </div>
                 <div class="client-id">
                   <div class="img-box">
-                    <img src="images/client.jpg" alt="">
+                    <img src="{{asset('ui/frontend/images/client.jpg')}}" alt="">
                   </div>
                   <div class="name">
                     <h5>
@@ -647,7 +647,7 @@
                 </div>
                 <div class="client-id">
                   <div class="img-box">
-                    <img src="images/client.jpg" alt="">
+                    <img src="{{asset('ui/frontend/images/client.jpg')}}" alt="">
                   </div>
                   <div class="name">
                     <h5>
@@ -679,7 +679,7 @@
                 </div>
                 <div class="client-id">
                   <div class="img-box">
-                    <img src="images/client.jpg" alt="">
+                    <img src="{{asset('ui/frontend/images/client.jpg')}}" alt="">
                   </div>
                   <div class="name">
                     <h5>
@@ -830,11 +830,11 @@
   <!-- footer section -->
 
   <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="{{asset('ui/frontend/js/jquery-3.4.1.min.js')}}"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="{{asset('ui/frontend/js/bootstrap.js')}}"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script src="{{asset('ui/frontend/js/custom.js')}}"></script>
 
 
 </body>

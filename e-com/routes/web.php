@@ -25,5 +25,6 @@ Route::get('/', function () {
     return view('frontend/index');
 });
 
+Route::get('/', function () { return view('frontend.index'); })->name('index');
 
 
