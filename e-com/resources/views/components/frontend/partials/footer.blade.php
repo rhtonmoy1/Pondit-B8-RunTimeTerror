@@ -17,11 +17,11 @@
             </p>
             <p>
               <i class="fa fa-phone" aria-hidden="true"></i>
-              +01 1234567890
+              +880 1839741579
             </p>
             <p>
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              demo@gmail.com
+              runtimeterror@gmail.com
             </p>
           </div>
         </div>
