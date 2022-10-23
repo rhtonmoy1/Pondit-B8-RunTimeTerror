@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
 
+
+// Admin Account Section
+Route::get('/dashboard/account', [AccountController::class,'index'])->name('account.index');
 
 
 
