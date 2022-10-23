@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ColorController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,12 @@ Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('dash
 
 // Admin Account Section
 Route::get('/dashboard/account', [AccountController::class,'index'])->name('account.index');
+
+
+// Admin Color Section
+Route::get('/dashboard/colors', [ColorController::class,'index'])->name('colors.index');
+Route::get('/dashboard/colors/create', [ColorController::class,'create'])->name('colors.create');
+Route::get('/dashboard/colors/trash', [ColorController::class,'trash'])->name('colors.trash');
 
 
 
