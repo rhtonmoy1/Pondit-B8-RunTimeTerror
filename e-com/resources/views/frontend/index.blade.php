@@ -398,8 +398,8 @@
               </h2>
             </div>
             <p>
-              Totam architecto rem beatae veniam, cum officiis adipisci soluta perspiciatis ipsa, expedita maiores quae accusantium. Animi veniam aperiam, necessitatibus mollitia ipsum id optio ipsa odio ab facilis sit labore officia!
-              Repellat expedita, deserunt eum soluta rem culpa. Aut, necessitatibus cumque. Voluptas consequuntur vitae aperiam animi sint earum, ex unde cupiditate, molestias dolore quos quas possimus eveniet facilis magnam? Vero, dicta.
+            Ensuring that the customer has the option to have the attention of the organization after the purchase, providing a satisfactory solution to the customer’s queries and complaints will result in a satisfied customer and a successful organization.
+            Good customer service is about developing bonds with your customers leading to long-term relationships. It has advantages for both customers and the business alike. Customers benefit because the business is providing a service that meets their needs. The business benefits because satisfied customers become loyal customers.
             </p>
             <a href="">
               Read More
