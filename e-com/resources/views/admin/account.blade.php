@@ -16,31 +16,68 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Photo</th>
-                                            <th>Product Name</th>
-                                            <th>Price</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
+                                            <th style="background-color: #DDE2E2;">ID</th>
+                                            <th style="background-color: #B7B9BE;">Photo</th>
+                                            <th style="background-color: #DDE2E2;">User Name</th>
+                                            <th style="background-color: #B7B9BE;">Status</th>
+                                            <th style="background-color: #DDE2E2;">Date</th>
+                                            <th style="background-color: #7AD9FFFF;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>John Michael</td>
-                                            <td><img src="{{asset('ui/dashboard/img/team-1.jpg')}}" alt="" style="height:100px; margin-left:-20px;"class="mx-4"></td>
-                                            <td>Online</td>
-                                            <td>200</td>
-                                            <td>23/04/18</td>
-                                            <td>Edit
+                                        <tr style="background-color: #F2EEF4;">
+                                            <td>  01</td>
+                                            <td><img src="{{asset('ui/dashboard/img/logo.png')}}" alt="" style="height:70px; width:80px;"></td>
+                                            <td>AB Mannan</td>
+                                            <td>Admin</td>
+                                            <td>21/10/2022</td>
+                                            <td><a class="btn btn-info">show</a>
+                                                <a class="btn btn-success">Edit</a>
+                                                <a class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>John Michael</td>
-                                            <td>Manager</td>
-                                            <td>Online</td>
-                                            <td>200</td>
-                                            <td>23/04/18</td>
-                                            <td>Edit
+                                        <tr style="background-color: #F6F5E2;">
+                                            <td>  02</td>
+                                            <td><img src="{{asset('ui/dashboard/img/logo.png')}}" alt="" style="height:70px; width:80px;"></td>
+                                            <td>RH Tonmoy</td>
+                                            <td>Admin</td>
+                                            <td>21/10/2022</td>
+                                            <td><a class="btn btn-info">show</a>
+                                                <a class="btn btn-success">Edit</a>
+                                                <a class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: #F2EEF4;">
+                                            <td>  03</td>
+                                            <td><img src="{{asset('ui/dashboard/img/logo.png')}}" alt="" style="height:70px; width:80px;"></td>
+                                            <td>A.I Ahsfaq</td>
+                                            <td>Admin</td>
+                                            <td>21/10/2022</td>
+                                            <td><a class="btn btn-info">show</a>
+                                                <a class="btn btn-success">Edit</a>
+                                                <a class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr   style="background-color: #F6F5E2;">
+                                            <td>  04</td>
+                                            <td><img src="{{asset('ui/dashboard/img/logo.png')}}" alt="" style="height:70px; width:80px;"></td>
+                                            <td>Khandoker Tajuddin</td>
+                                            <td>Admin</td>
+                                            <td>21/10/2022</td>
+                                            <td><a class="btn btn-info">show</a>
+                                                <a class="btn btn-success">Edit</a>
+                                                <a class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: #F2EEF4;">
+                                            <td>  05</td>
+                                            <td><img src="{{asset('ui/dashboard/img/logo.png')}}" alt="" style="height:70px; width:80px;"></td>
+                                            <td>R H Milon</td>
+                                            <td>Admin</td>
+                                            <td>21/10/2022</td>
+                                            <td><a class="btn btn-info" href="#">show</a>
+                                                <a class="btn btn-success" href="#">Edit</a>
+                                                <a class="btn btn-danger" href="#">Delete</a>
                                             </td>
                                         </tr>
 
