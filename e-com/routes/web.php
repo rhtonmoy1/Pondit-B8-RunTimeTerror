@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->name('admin.')->group(function () {
+// Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/dashboard', function () { return view('admin.dashboard'); })->name('dashboard');
-    Route::get('/account', function () { return view('admin.account'); })->name('account');
-    Route::get('/product', function () { return view('admin.product'); })->name('product');
-});
+//     Route::get('/dashboard', function () { return view('admin.dashboard'); })->name('dashboard');
+//     Route::get('/account', function () { return view('admin.account'); })->name('account');
+//     Route::get('/product', function () { return view('admin.product'); })->name('product');
+// });
+
+
+Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
 
 
 
