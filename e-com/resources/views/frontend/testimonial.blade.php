@@ -35,7 +35,7 @@
                   </div>
                   <div class="name">
                     <h5>
-                      James Dew
+                      Kh Tajuddin
                     </h5>
                     <h6>
                       Photographer
@@ -67,7 +67,7 @@
                   </div>
                   <div class="name">
                     <h5>
-                      James Dew
+                      Kh Tajuddin
                     </h5>
                     <h6>
                       Photographer
@@ -99,7 +99,7 @@
                   </div>
                   <div class="name">
                     <h5>
-                      James Dew
+                      Kh Tajuddin
                     </h5>
                     <h6>
                       Photographer

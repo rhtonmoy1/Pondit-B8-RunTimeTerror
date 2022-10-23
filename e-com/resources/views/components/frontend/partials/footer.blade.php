@@ -7,7 +7,7 @@
             <h5>
               <a href="" class="navbar-brand">
                 <span>
-                  Minics
+                  RUN TIME TERROR
                 </span>
               </a>
             </h5>
@@ -17,11 +17,11 @@
             </p>
             <p>
               <i class="fa fa-phone" aria-hidden="true"></i>
-              +01 1234567890
+              +880 1839741579
             </p>
             <p>
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              demo@gmail.com
+              runtimeterror@gmail.com
             </p>
           </div>
         </div>
@@ -31,7 +31,7 @@
               Information
             </h5>
             <p>
-              Eligendi sunt, provident, debitis nemo, facilis cupiditate velit libero dolorum aperiam enim nulla iste maxime corrupti ad illo libero minus.
+            RunTimeTerror is an online retail service based in Bangladesh and owned by the RTT Group. Launched in 2022, it is made up of small businesses in Bangladesh and other locations, such as Singapore, that offer products to international online buyers.
             </p>
           </div>
         </div>
@@ -81,16 +81,16 @@
               </button>
             </form>
             <div class="social_box">
-              <a href="">
+              <a href="https://www.facebook.com/khandoker.tajuddin.97/">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="https://twitter.com/khTajuddin97">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="https://www.youtube.com/watch?v=y08Kg9HyavM">
                 <i class="fa fa-youtube" aria-hidden="true"></i>
               </a>
             </div>
@@ -108,7 +108,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        <a href="https://html.design/">PONDIT B8 Run Time Terror</a>
       </p>
     </div>
   </footer>
