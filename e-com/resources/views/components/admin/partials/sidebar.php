@@ -11,7 +11,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="{{url('dashboard')}}">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{route('dashboard.index')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -19,17 +19,40 @@
           </a>
         </li>
 
+        
         <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('account')}}">
+          <a class="nav-link text-white " href="{{route('account.index')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
             </div>
-            <span class="nav-link-text ms-1">Accounts</span>
+            <span class="nav-link-text ms-1">Account</span>
+          </a>
+        </li>
+          
+
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{{route('colors.index')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt_long</i>
+            </div>
+            <span class="nav-link-text ms-1">Color</span>
           </a>
         </li>
 
+
         <li class="nav-item">
-          <a class="nav-link text-white " href="{{url('product')}}">
+          <a class="nav-link text-white " href="{{route('categories.index')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt_long</i>
+            </div>
+            <span class="nav-link-text ms-1">Category</span>
+          </a>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{{route('products.index')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
@@ -49,7 +72,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white " href="{{route('users.index')}}">
+          <a class="nav-link text-white " href="#">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
