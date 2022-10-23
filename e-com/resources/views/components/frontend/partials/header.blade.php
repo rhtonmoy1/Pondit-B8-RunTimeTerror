@@ -8,7 +8,7 @@
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call : +880 1839741579
+                  Call : +880 01785020839
                 </span>
               </a>
               <a href="">
