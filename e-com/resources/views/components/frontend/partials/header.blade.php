@@ -8,13 +8,13 @@
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call : +880 1839741579
+                  Call : +01 123455678990
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  Email : runtimeterror@gmail.com
+                  Email : demo@gmail.com
                 </span>
               </a>
             </div>
@@ -47,7 +47,7 @@
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html">
               <span>
-                RUN TIME TERROR
+                Minics
               </span>
             </a>
 

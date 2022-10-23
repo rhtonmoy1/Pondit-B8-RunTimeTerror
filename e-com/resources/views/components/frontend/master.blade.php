@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>RUN TIME TERROR</title>
+  <title>Minics</title>
 
 
   <!-- bootstrap core css -->
