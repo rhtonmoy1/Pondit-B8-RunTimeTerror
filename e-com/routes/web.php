@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,13 +17,21 @@ Route::get('/',function(){
     return view ('welcome');
 });
 require __DIR__.'/auth.php';
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', function () { return view('admin.dashboard'); })->name('dashboard');
-    Route::get('/account', function () { return view('admin.account'); })->name('account');
-    Route::get('/product', function () { return view('admin.product'); })->name('product');
+    Route::get('/account', function () { return view('admin.account'); })->name('admin.account');
+    Route::get('/product', function () { return view('admin.product'); })->name('admin.product');
+
+    Route::resource('categories', CategoryController::class);
+
+    Route::get('category-trash', [CategoryController::class, 'trash'])->name('categories.trash');
+    Route::patch('category-trash/{id}', [CategoryController::class, 'restore'])->name('categories.restore');
+    Route::delete('category-trash/{id}', [CategoryController::class, 'delete'])->name('categories.delete');
+    // Route::get('categories/pdf', [CategoryController::class, 'downloadPdf'])->name('categories.pdf');
 });
 
+// Category
 
 
 
