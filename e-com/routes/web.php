@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\AccountController;
-use App\Http\Controllers\ColorController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,44 +13,31 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function(){
+    return view ('welcome');
+});
+require __DIR__.'/auth.php';
+Route::prefix('admin')->group(function () {
 
-// Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', function () { return view('admin.dashboard'); })->name('dashboard');
+    Route::get('/account', function () { return view('admin.account'); })->name('admin.account');
+    Route::get('/product', function () { return view('admin.product'); })->name('admin.product');
 
-//     Route::get('/dashboard', function () { return view('admin.dashboard'); })->name('dashboard');
-//     Route::get('/account', function () { return view('admin.account'); })->name('account');
-//     Route::get('/product', function () { return view('admin.product'); })->name('product');
-// });
+    Route::resource('categories', CategoryController::class);
 
+    Route::get('category-trash', [CategoryController::class, 'trash'])->name('categories.trash');
+    Route::patch('category-trash/{id}', [CategoryController::class, 'restore'])->name('categories.restore');
+    Route::delete('category-trash/{id}', [CategoryController::class, 'delete'])->name('categories.delete');
+    // Route::get('categories/pdf', [CategoryController::class, 'downloadPdf'])->name('categories.pdf');
+});
 
-Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
-
-
-// Admin Account Section
-Route::get('/dashboard/account', [AccountController::class,'index'])->name('account.index');
-
-<<<<<<< Updated upstream
-
-// Admin Color Sectionn
-Route::get('/dashboard/colors', [ColorController::class,'index'])->name('colors.index');
-Route::get('/dashboard/colors/create', [ColorController::class,'create'])->name('colors.create');
-Route::get('/dashboard/colors/trash', [ColorController::class,'trash'])->name('colors.trash');
-
-
-// Admin Product section
-Route::get('/dashboard/products', [ProductController::class,'index'])->name('products.index');
-Route::get('/dashboard/products/create', [ProductController::class,'create'])->name('products.create');
-Route::get('/dashboard/products/trash', [ProductController::class,'trash'])->name('products.trash');
+// Category
 
 
 
-
-Route::get('/', function () { return view('frontend.index'); })->name('index');
-=======
 Route::get('/home', function () { return view('frontend.index'); })->name('index');
->>>>>>> Stashed changes
 Route::get('/product', function () { return view('frontend.product'); })->name('product');
 Route::get('/testimonial', function () { return view('frontend.testimonial'); })->name('testimonial');
 Route::get('/why', function () { return view('frontend.why'); })->name('why');
 Route::get('/about', function () { return view('frontend.about'); })->name('about');
-
 
