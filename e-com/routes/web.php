@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
@@ -22,7 +23,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', function () { return view('admin.dashboard'); })->name('dashboard');
     Route::get('/account', function () { return view('admin.account'); })->name('account');
     // Route::get('/product', function () { return view('admin.product'); })->name('product');
-});
+
 
 
 
@@ -42,6 +43,16 @@ Route::patch('colors-trash/{id}', [ColorController::class, 'restore'])->name('co
 Route::delete('colors-trash/{id}', [ColorController::class, 'tdelete'])->name('colors.tdelete');
 
 
+//Admin Brand section 
+Route::get('/brands/create', [BrandController::class,'create'])->name('brands.create');
+Route::post('/brands/store', [BrandController::class,'store'])->name('brands.store');
+Route::get('/brands/edit/{id}', [BrandController::class,'edit'])->name('brands.edit');
+Route::patch('/brands/update/{id}', [BrandController::class,'update'])->name('brands.update');
+Route::get('/brands',[BrandController::class,'index'])->name('brands.index');
+Route::get('/brands/{id}',[BrandController::class,'show'])->name('brands.show');
+Route::get('/brands/{id}/delete', [BrandController::class,'delete'])->name('brands.delete');
+
+
 
 
 
@@ -51,7 +62,7 @@ Route::get('/dashboard/products/create', [ProductController::class,'create'])->n
 Route::get('/dashboard/products/trash', [ProductController::class,'trash'])->name('products.trash');
 
 
-
+});
 
 
 

@@ -53,27 +53,7 @@
                 </tr>
                 @endforeach
 
-                <!-- <tr>
-                    <td>03</td>
-                    <td>Color_Name</td>
-                    <td> <div>color_code  </div> </td>
-                    <td class="d-flex">
-                       <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>01</td>
-                    <td>Color_Name</td>
-                    <td> <div>color_code  </div> </td>
-                    <td class="d-flex">
-                       <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
-                    </td>
-                </tr> -->
+              
                
             </tbody>
         </table>
