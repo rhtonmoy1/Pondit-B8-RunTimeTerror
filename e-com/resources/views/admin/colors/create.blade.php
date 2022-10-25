@@ -13,8 +13,23 @@
         </div>
     </div>
 
+ 
 
-    <form action="#" method="POST" enctype="multipart/form-data">
+
+    <form action="{{route('colors.store')}}" method="POST" enctype="multipart/form-data">
+        
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+        @endif
+
+    @csrf
+
   <div class="form-group">
     <label for="title">Name</label>
     <input name="title" type="text" class="form-control" id="title"  placeholder="Enter name" value="">

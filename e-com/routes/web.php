@@ -33,8 +33,12 @@ Route::get('/dashboard/account', [AccountController::class,'index'])->name('acco
 
 
 // Admin Color Sectionn
+
+
 Route::get('/dashboard/colors', [ColorController::class,'index'])->name('colors.index');
 Route::get('/dashboard/colors/create', [ColorController::class,'create'])->name('colors.create');
+Route::post('/dashboard/colors/store', [ColorController::class,'store'])->name('colors.store');
+
 Route::get('/dashboard/colors/trash', [ColorController::class,'trash'])->name('colors.trash');
 
 

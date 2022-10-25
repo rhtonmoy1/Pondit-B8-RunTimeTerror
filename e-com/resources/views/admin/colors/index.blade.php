@@ -23,6 +23,11 @@
 
         </div>
         <table class="table">
+        @if(session('message'))
+          <p class="text-success">
+               {{ session('message') }}
+             </p>
+                 @endif
             <thead>
                 <tr>
                     <th style="background-color: #f7ded7;">SL#</th>
@@ -33,18 +38,21 @@
             </thead>
             <tbody>
               
+            @php $id=1 @endphp 
+            @foreach ($data as $Color)
                 <tr>
-                    <td>01</td>
-                    <td>Color_Name</td>
-                    <td> <div>color_code  </div> </td>
+                    <td>{{$id++}}</td>
+                    <td>{{$Color->title}}</td>
+                    <td> <div>{{$Color->color_code}}</div> </td>
                     <td class="d-flex">
                        <a class="btn btn-info" href="#">Show</a>
                         <a class="btn btn-success" href="#">Edit</a>
                         <a class="btn btn-danger" href="#">Delete</a>
                     </td>
                 </tr>
+                @endforeach
 
-                <tr>
+                <!-- <tr>
                     <td>03</td>
                     <td>Color_Name</td>
                     <td> <div>color_code  </div> </td>
@@ -64,7 +72,7 @@
                         <a class="btn btn-success" href="#">Edit</a>
                         <a class="btn btn-danger" href="#">Delete</a>
                     </td>
-                </tr>
+                </tr> -->
                
             </tbody>
         </table>
