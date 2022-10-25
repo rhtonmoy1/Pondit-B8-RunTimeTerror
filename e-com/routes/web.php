@@ -31,6 +31,7 @@ Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('dash
 // Admin Account Section
 Route::get('/dashboard/account', [AccountController::class,'index'])->name('account.index');
 
+<<<<<<< Updated upstream
 
 // Admin Color Sectionn
 Route::get('/dashboard/colors', [ColorController::class,'index'])->name('colors.index');
@@ -47,6 +48,9 @@ Route::get('/dashboard/products/trash', [ProductController::class,'trash'])->nam
 
 
 Route::get('/', function () { return view('frontend.index'); })->name('index');
+=======
+Route::get('/home', function () { return view('frontend.index'); })->name('index');
+>>>>>>> Stashed changes
 Route::get('/product', function () { return view('frontend.product'); })->name('product');
 Route::get('/testimonial', function () { return view('frontend.testimonial'); })->name('testimonial');
 Route::get('/why', function () { return view('frontend.why'); })->name('why');
