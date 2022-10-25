@@ -14,6 +14,14 @@
               <input type="text" class="form-control">
             </div>
           </div>
+          <div>
+          <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button class="btn btn-info px-3" href="#" onclick="event.preventDefault();
+                                    this.closest('form').submit();">Log Out</button>
+            </form>
+          </div>
+
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
