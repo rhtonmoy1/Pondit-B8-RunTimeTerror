@@ -38,6 +38,9 @@ Route::patch('/colors/update/{id}', [ColorController::class,'update'])->name('co
 Route::get('/colors/{id}',[ColorController::class,'show'])->name('colors.show');
 Route::get('/colors/{id}/delete', [ColorController::class,'delete'])->name('colors.delete');
 Route::get('/dashboard/colors/trash', [ColorController::class,'trash'])->name('colors.trash');
+Route::patch('colors-trash/{id}', [ColorController::class, 'restore'])->name('colors.restore');
+Route::delete('colors-trash/{id}', [ColorController::class, 'tdelete'])->name('colors.tdelete');
+
 
 
 

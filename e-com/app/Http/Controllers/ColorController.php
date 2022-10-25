@@ -99,8 +99,34 @@ class ColorController extends Controller
         }
 
 
-     public function trash(){
-        return view('admin.colors.trash');
-     }
+   //   public function trash(){
+   //      return view('admin.colors.trash');
+
+   //   }
+   public function trash()
+   {
+       $colors = Color::onlyTrashed()->get();
+       return view('admin.colors.trash', compact('colors'));
+   }
+
+   public function restore($id)
+   {
+       $color = Color::onlyTrashed()->find($id);
+       $color->restore();
+
+       return redirect()
+           ->route('colors.trash')
+           ->withMessage('Restored Successfully!');
+   } 
+
+   public function tdelete($id)
+   {
+       $color = Color::onlyTrashed()->find($id);
+       $color->forceDelete();
+
+       return redirect()
+           ->route('colors.trash')
+           ->withMessage('Deleted Successfully!');
+   } 
      
 }

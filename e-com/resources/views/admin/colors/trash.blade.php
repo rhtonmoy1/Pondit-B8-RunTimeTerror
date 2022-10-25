@@ -20,6 +20,7 @@
 
         </div>
         <table class="table">
+        @method('patch')
             <thead>
                 <tr>
                     <th>SL#</th>
@@ -29,40 +30,30 @@
                 </tr>
             </thead>
             <tbody>
-              
+            @php $id=1 @endphp
+               @foreach ($colors as $color)
                 <tr>
-                    <td>01</td>
-                    <td>Color_Name</td>
-                    <td> <div>color_code  </div> </td>
-                    <td class="d-flex">
-                       <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
-                    </td>
-                </tr>
+                    <td>{{$id++}}</td>
+                    <td>{{ $color->title }}</td>
+                    <td><div>{{ $color->color_code }}</div></td>
+                  
 
-                <tr>
-                    <td>03</td>
-                    <td>Color_Name</td>
-                    <td> <div>color_code  </div> </td>
                     <td class="d-flex">
-                       <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
+                        <form action="{{ route('colors.restore', $color->id) }}" method="post">
+                            @csrf
+                            @method('patch')
+                            <button class="btn btn-success" onclick="return confirm('Are you sure,, you want to restore??')">Restore</button>
+                        </form>
+                     
+                        <form action="{{ route('colors.tdelete', $color->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger" onclick="return confirm('Are you sure,,  you want to Delete??')">Delete</button>
+                        </form>
                     </td>
                 </tr>
-
-                <tr>
-                    <td>01</td>
-                    <td>Color_Name</td>
-                    <td> <div>color_code  </div> </td>
-                    <td class="d-flex">
-                       <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
-                    </td>
-                </tr>
-               
+                @endforeach
+                
             </tbody>
         </table>
 

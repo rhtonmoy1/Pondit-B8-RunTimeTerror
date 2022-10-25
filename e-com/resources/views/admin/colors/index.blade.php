@@ -5,9 +5,9 @@
             <h1 class="h2">Colors</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group me-2">
-                    <a href="#"> 
+                    <!-- <a href="#"> 
                         <button type="button" class="btn btn-sm btn-outline-primary">PDF</button>
-                    </a>
+                    </a> -->
                     <a href="{{route('colors.trash')}}">
                         <button type="button" class="btn btn-sm btn-outline-danger">Trash</button>
                     </a>
