@@ -58,6 +58,36 @@ class ColorController extends Controller
          return view('admin.colors.show', compact('colorsshowdata'));
       }
           
+
+
+
+
+      public function edit($id){
+
+         $coloredit = Color::find($id);
+         return view('admin.colors.edit', compact('coloredit'));
+     }
+
+
+
+     public function update(Request $formequest, $id){
+
+      $colorUpdate = Color::find($id);
+  
+      $data = [
+  
+        // 'category_id'=>$formequest->category_id,
+  
+         'title'=>$formequest->title,
+         'color_code'=>$formequest->color_code,
+      ];
+
+      $colorUpdate->update($data);
+      return Redirect()-> route ('colors.index');
+  
+     }
+
+
       public function  delete ($id){
          $colorsdelete = Color::find($id);
          $colorsdelete ->delete();
@@ -67,7 +97,7 @@ class ColorController extends Controller
    
    
         }
-        
+
 
      public function trash(){
         return view('admin.colors.trash');

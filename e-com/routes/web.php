@@ -32,15 +32,18 @@ Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('dash
 Route::get('/dashboard/account', [AccountController::class,'index'])->name('account.index');
 
 
+
 // Admin Color Sectionn
 Route::get('/dashboard/colors', [ColorController::class,'index'])->name('colors.index');
 Route::get('/dashboard/colors/create', [ColorController::class,'create'])->name('colors.create');
 Route::post('/dashboard/colors/store', [ColorController::class,'store'])->name('colors.store');
-
+Route::get('/colors/edit/{id}', [ColorController::class,'edit'])->name('colors.edit');
+Route::patch('/colors/update/{id}', [ColorController::class,'update'])->name('colors.update');
 Route::get('/colors/{id}',[ColorController::class,'show'])->name('colors.show');
 Route::get('/colors/{id}/delete', [ColorController::class,'delete'])->name('colors.delete');
-
 Route::get('/dashboard/colors/trash', [ColorController::class,'trash'])->name('colors.trash');
+
+
 
 
 // Admin Product section
