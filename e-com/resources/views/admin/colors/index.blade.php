@@ -43,9 +43,10 @@
                 <tr>
                     <td>{{$id++}}</td>
                     <td>{{$Color->title}}</td>
+                 
                     <td> <div>{{$Color->color_code}}</div> </td>
                     <td class="d-flex">
-                       <a class="btn btn-info" href="#">Show</a>
+                       <a class="btn btn-info" href="{{route('colors.show',['id' => $Color->id])}})}}">Show</a>
                         <a class="btn btn-success" href="#">Edit</a>
                         <a class="btn btn-danger" href="#">Delete</a>
                     </td>

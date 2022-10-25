@@ -53,7 +53,10 @@ class ColorController extends Controller
 
       }
 
-
+      public function show($id){
+         $colorsshowdata = Color::find($id);
+         return view('admin.colors.show', compact('colorsshowdata'));
+      }
 
 
      public function trash(){
