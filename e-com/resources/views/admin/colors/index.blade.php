@@ -48,7 +48,7 @@
                     <td class="d-flex">
                        <a class="btn btn-info" href="{{route('colors.show',['id' => $Color->id])}})}}">Show</a>
                         <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
+                        <a class="btn btn-danger" href="{{route('colors.delete', ['id' => $Color->id])}}">Delete</a>
                     </td>
                 </tr>
                 @endforeach

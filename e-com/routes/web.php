@@ -38,6 +38,7 @@ Route::get('/dashboard/colors/create', [ColorController::class,'create'])->name(
 Route::post('/dashboard/colors/store', [ColorController::class,'store'])->name('colors.store');
 
 Route::get('/colors/{id}',[ColorController::class,'show'])->name('colors.show');
+Route::get('/colors/{id}/delete', [ColorController::class,'delete'])->name('colors.delete');
 
 Route::get('/dashboard/colors/trash', [ColorController::class,'trash'])->name('colors.trash');
 

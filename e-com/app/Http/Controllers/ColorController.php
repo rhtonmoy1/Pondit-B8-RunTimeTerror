@@ -57,7 +57,17 @@ class ColorController extends Controller
          $colorsshowdata = Color::find($id);
          return view('admin.colors.show', compact('colorsshowdata'));
       }
-
+          
+      public function  delete ($id){
+         $colorsdelete = Color::find($id);
+         $colorsdelete ->delete();
+         Session::flash('messege',' successfully delete');
+   
+       return Redirect() ->route('colors.index');
+   
+   
+        }
+        
 
      public function trash(){
         return view('admin.colors.trash');
