@@ -17,19 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->group(function () {
 
-//     Route::get('/dashboard', function () { return view('admin.dashboard'); })->name('dashboard');
-//     Route::get('/account', function () { return view('admin.account'); })->name('account');
-//     Route::get('/product', function () { return view('admin.product'); })->name('product');
-// });
-
-
-Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
+    Route::get('/dashboard', function () { return view('admin.dashboard'); })->name('dashboard');
+    Route::get('/account', function () { return view('admin.account'); })->name('account');
+    // Route::get('/product', function () { return view('admin.product'); })->name('product');
+});
 
 
-// Admin Account Section
-Route::get('/dashboard/account', [AccountController::class,'index'])->name('account.index');
+
 
 
 
@@ -50,6 +46,8 @@ Route::get('/dashboard/colors/trash', [ColorController::class,'trash'])->name('c
 Route::get('/dashboard/products', [ProductController::class,'index'])->name('products.index');
 Route::get('/dashboard/products/create', [ProductController::class,'create'])->name('products.create');
 Route::get('/dashboard/products/trash', [ProductController::class,'trash'])->name('products.trash');
+
+
 
 
 
