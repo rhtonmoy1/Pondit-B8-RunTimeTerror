@@ -11,23 +11,22 @@
         </div>
     </div>
 
-<form action="#" method="post" enctype="multipart/form-data">
-
-  <div class="form-group" style="margin-top: 7px;">
-
-
-  <select name="#" class="form-control" require>
-  <option value=""> select Category name </option>
-  <option value="#">Category_01</option>
-  <option value="#">Category_02</option>
-  <option value="#">Category_03</option>
-  <option value="#">Category_04</option>
-</select>
-</div>
+<form action="{{route ('products.store')}}" method="post" enctype="multipart/form-data">
+@csrf
 
 <div class="form-group" style="margin-top: 7px;">
-    <label for="name">Product Name</label>
-    <input name="id_name" type="text" class="form-control" id="name"  placeholder="Enter Product Name .........">
+    <label for="title">Product_Name</label>
+    <input name="title" type="text" class="form-control" id="title"  placeholder="Enter Product Name .........">
   </div>
+  <div class="form-group">
+    <label for="description">description</label>
+    <input name="description" type="text" class="form-control" id="description"  placeholder="Enter Product_Code  .........">
+  </div>
+  <div class="form-group">
+    <label for="price">Product_Quantity</label>
+    <input name="price" type="number" class="form-control" id="price"  placeholder="Enter Product_Quantity .........">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </x-admin.master>

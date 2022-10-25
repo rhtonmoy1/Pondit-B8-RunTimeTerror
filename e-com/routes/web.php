@@ -55,12 +55,19 @@ Route::get('/brands/{id}/delete', [BrandController::class,'delete'])->name('bran
 
 
 
-
 // Admin Product section
-Route::get('/dashboard/products', [ProductController::class,'index'])->name('products.index');
-Route::get('/dashboard/products/create', [ProductController::class,'create'])->name('products.create');
-Route::get('/dashboard/products/trash', [ProductController::class,'trash'])->name('products.trash');
 
+Route::get('/dashboard/products/create', [ProductController::class,'create'])->name('products.create');
+Route::post('/dashboard/products/store', [ProductController::class,'store'])->name('products.store');
+Route::get('/dashboard/products/', [ProductController::class,'index'])->name('products.index');
+Route::get('/products/{id}', [ProductController::class,'Prodectshow'])->name('products.show');
+Route::get('/products/{id}/delete', [ProductController::class,'delete'])->name('products.delete');
+Route::get('/edit/{id}', [ProductController::class,'edit'])->name('products.edit');
+Route::patch('/update/{id}', [ProductController::class,'update'])->name('products.update');
+Route::get('/trash', [ProductController::class,'trash'])->name('products.trash');
+Route::get('/restore/{id}', [ProductController::class,'restore'])->name('products.restore');
+Route::get('/Tdelete/{id}', [ProductController::class,'Tdelete'])->name('products.Tdelete');
+ 
 
 });
 

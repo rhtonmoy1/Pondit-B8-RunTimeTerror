@@ -24,6 +24,12 @@
      
 
         <table class="table">
+
+        @if (session('message'))
+      <p  class="text-success">
+     {{session('message')}}
+      </p>
+      @endif
             <thead>
                 <tr>
                     <th style="background-color: #DDE2E2;">SL#</th>
@@ -33,61 +39,21 @@
                 </tr>
             </thead>
             <tbody>
+            @php $id=1 @endphp
+               @foreach ($pdata as $Product )
+                <tr>
+                    <td>{{$id++}}</td>
+                    <td>{{$Product->title}}</td>
+                    <td>Pending...</td>
+                    <td class="d-flex">
+                        <a class="btn btn-info" href="{{route ('products.show', ['id'=> $Product->id])}}">Show</a>
+                        <a class="btn btn-success" href="{{route ('products.edit', ['id'=>$Product->id])}}">Edit</a>
+                        <a class="btn btn-danger" href="{{route ('products.delete', ['id'=>$Product->id])}}">Delete</a>
+                    </td>
+                </tr>
+                @endforeach
+
                
-                <tr>
-                    <td>01</td>
-                    <td>Product_Name</td>
-                    <td>Category_Name</td>
-                    <td class="d-flex">
-                        <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Product_Name</td>
-                    <td>Category_Name</td>
-                    <td class="d-flex">
-                        <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Product_Name</td>
-                    <td>Category_Name</td>
-                    <td class="d-flex">
-                    <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a> 
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>04</td>
-                    <td>Product_Name</td>
-                    <td>Category_Name</td>
-                    <td class="d-flex">
-                        <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>05</td>
-                    <td>Product_Name</td>
-                    <td>Category_Name</td>
-                    <td class="d-flex">
-                        <a class="btn btn-info" href="#">Show</a>
-                        <a class="btn btn-success" href="#">Edit</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
-                    </td>
-                </tr>
             </tbody>
         </table>
 
