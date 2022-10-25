@@ -1,12 +1,14 @@
+<x-frontend.master>
+<div class="mb-4">
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+            <!-- <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            </a> -->
         </x-slot>
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" >
             @csrf
 
             <!-- Name -->
@@ -25,6 +27,22 @@
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
 
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
+            <!-- Mobile -->
+            <div class="mt-4">
+                <x-input-label for="mobile" :value="__('Mobile')" />
+
+                <x-text-input id="mobile" class="block mt-1 w-full" type="text" name="mobile_no" :value="old('mobile')" required />
+
+                <x-input-error :messages="$errors->get('mobile')" class="mt-2" />
+            </div>
+            <!-- Address -->
+            <div class="mt-4">
+                <x-input-label for="address" :value="__('Address')" />
+
+                <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
+
+                <x-input-error :messages="$errors->get('address')" class="mt-2" />
             </div>
 
             <!-- Password -->
@@ -58,7 +76,10 @@
                 <x-primary-button class="ml-4">
                     {{ __('Register') }}
                 </x-primary-button>
-            </div>
+            </div  class="mb-2">
         </form>
+       
     </x-auth-card>
 </x-guest-layout>
+</div>
+</x-frontend.master>

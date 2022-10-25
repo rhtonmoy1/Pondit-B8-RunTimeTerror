@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
@@ -33,16 +35,25 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        try{
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        
+            DB::beginTransaction();
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+        ]);
+        $user->profile()->create([
+            'user_id' => $user->id,
+            'mobile_no' => $request->mobile_no,
+            'address' => $request->address,
+            
         ]);
 
         event(new Registered($user));
@@ -50,6 +61,9 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }catch(QueryException $e){
+        DB::rollBack();
+    }
     }
 }
         

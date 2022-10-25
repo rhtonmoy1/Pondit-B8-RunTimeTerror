@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SizeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',function(){
-    return view ('welcome');
+    return view ('frontend.index');
 });
 require __DIR__.'/auth.php';
 Route::prefix('admin')->group(function () {
@@ -23,12 +25,24 @@ Route::prefix('admin')->group(function () {
     Route::get('/account', function () { return view('admin.account'); })->name('admin.account');
     Route::get('/product', function () { return view('admin.product'); })->name('admin.product');
 
+
+    Route::prefix('users')->name('users.')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('index');
+        Route::get('/{user}', [UserController::class, 'show'])->name('show');
+    });
+
     Route::resource('categories', CategoryController::class);
 
     Route::get('category-trash', [CategoryController::class, 'trash'])->name('categories.trash');
     Route::patch('category-trash/{id}', [CategoryController::class, 'restore'])->name('categories.restore');
     Route::delete('category-trash/{id}', [CategoryController::class, 'delete'])->name('categories.delete');
     // Route::get('categories/pdf', [CategoryController::class, 'downloadPdf'])->name('categories.pdf');
+
+    Route::resource('sizes', SizeController::class);
+    Route::get('size-trash', [SizeController::class, 'trash'])->name('sizes.trash');
+    Route::patch('size-trash/{id}', [SizeController::class, 'restore'])->name('sizes.restore');
+    Route::delete('size-trash/{id}', [SizeController::class, 'delete'])->name('sizes.delete');
+
 });
 
 // Category

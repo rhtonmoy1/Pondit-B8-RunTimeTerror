@@ -22,6 +22,7 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $data = [
+            
             'name' => $request->name,
             'is_active' => $request->is_active ? true : false,
             'image' =>  $this->uploadImage($request->file('image'))

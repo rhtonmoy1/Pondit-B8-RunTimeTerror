@@ -26,9 +26,23 @@
             </from>
             <div class="user_option_box">
               <a href="" class="account-link">
-                <i class="fa fa-user" aria-hidden="true"></i>
+              
+                
                 <span>
-                  My Account
+                @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-2 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
                 </span>
               </a>
               <a href="" class="cart-link">
@@ -45,7 +59,7 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
               <span>
                 Minics
               </span>
