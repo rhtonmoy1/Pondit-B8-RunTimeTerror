@@ -75,6 +75,13 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
 
 });
 
+Route::get('/home', function () { return view('frontend.index'); })->name('index');
+Route::get('/product', function () { return view('frontend.product'); })->name('product');
+Route::get('/testimonial', function () { return view('frontend.testimonial'); })->name('testimonial');
+Route::get('/why', function () { return view('frontend.why'); })->name('why');
+Route::get('/about', function () { return view('frontend.about'); })->name('about');
+
+
 
 
 Route::fallback(function () {
