@@ -1,45 +1,3 @@
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Notifications
-            </a>
-            <ul class="dropdown-menu"  >
-                @foreach (Auth::user()->unreadNotifications as $notification)
-                    <li><a class="dropdown-item" href="{{ $notification->data['action_url'] }}">{{ $notification->data['message'] }}</a></li>
-                @endforeach
-            </ul>
-        </li>
-    </ul>
-    <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button class="btn btn-info px-3" href="#" onclick="event.preventDefault();
-                                    this.closest('form').submit();">Log Out</button>
-            </form>
-
-        </div>
-    </div>
-</header>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
@@ -59,13 +17,13 @@
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
 
-                <span class="d-sm-inline d-none"><form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button class="btn btn-info px-3" href="#" onclick="event.preventDefault();
-                                    this.closest('form').submit();"></button>
-            </form></span>
+                <button class="btn btn-info px-3 mt-3" href="#" onclick="event.preventDefault();
+                                    this.closest('form').submit();">Log Out</button>
+            </form>
+
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -86,12 +44,11 @@
               <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
-              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
 
+              <ul class="dropdown-menu dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton"  >
                 @foreach (Auth::user()->unreadNotifications as $notification)
                     <li><a class="dropdown-item" href="{{ $notification->data['action_url'] }}">{{ $notification->data['message'] }}</a></li>
                 @endforeach
-
 
               </ul>
             </li>

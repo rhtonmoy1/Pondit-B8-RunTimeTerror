@@ -1,55 +1,71 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Carousel Template · Bootstrap v5.0</title>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="{{asset('ui/frontend/images/fevicon.png')}}" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('ui/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Favicons -->
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
+  <title>RUN TIME TERROR</title>
 
 
-    <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{asset('ui/frontend/css/bootstrap.css')}}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="{{asset('ui/frontend/css/font-awesome.min.css')}}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{asset('ui/frontend/css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{asset('ui/frontend/css/responsive.css')}}" rel="stylesheet" />
+
 </head>
 
 <body>
 
-    <x-frontend.partials.header />
+<!-- Header Start-->
 
-    <main>
+<x-frontend.partials.header/>
 
-        {{ $slot }}
+<!-- Header Endd -->
 
-        <!-- FOOTER -->
-        <x-frontend.partials.header />
 
-    </main>
 
-    <script src="{{ asset('ui/frontend/js/bootstrap.bundle.min.js') }}"></script>
-    @stack('script')
+
+  <!-- Content Start-->
+
+  {{ $slot }}
+
+  <!-- Content End -->
+
+
+
+
+<!-- Footer Start-->
+
+<x-frontend.partials.footer/>
+
+<!-- Footer End-->
+
+  <!-- jQery -->
+  <script src="{{asset('ui/frontend/js/jquery-3.4.1.min.js')}}"></script>
+  <!-- bootstrap js -->
+  <script src="{{asset('ui/frontend/js/bootstrap.js')}}"></script>
+  <!-- custom js -->
+  <script src="{{asset('ui/frontend/js/custom.js')}}"></script>
+  @stack('script')
+
 </body>
 
 </html>
