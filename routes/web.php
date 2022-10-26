@@ -78,5 +78,5 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
 
 
 Route::fallback(function () {
-    dd('Tomar chaoa puron korte parbona.....');
+    dd('Terror Page.');
 });
