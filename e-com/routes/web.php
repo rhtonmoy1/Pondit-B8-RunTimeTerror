@@ -26,9 +26,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/product', function () { return view('admin.product'); })->name('admin.product');
 
 
-    Route::prefix('users')->name('users.')->group(function () {
-        Route::get('/', [UserController::class, 'index'])->name('index');
-        Route::get('/{user}', [UserController::class, 'show'])->name('show');
+    Route::prefix('users')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
+        Route::get('/{user}', [UserController::class, 'show'])->name('users.show');
     });
 
     Route::resource('categories', CategoryController::class);
