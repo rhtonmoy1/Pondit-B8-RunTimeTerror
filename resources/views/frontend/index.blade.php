@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="{{asset('ui/frontend/images/slider-img.png')}}" alt="">
+                    <img src="{{asset('/app/public/carousels/'.$carousel->image)}}" alt="">
                   </div>
                 </div>
               </div>
