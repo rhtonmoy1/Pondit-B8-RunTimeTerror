@@ -86,4 +86,5 @@ Route::get('/about', function () { return view('frontend.about'); })->name('abou
 
 Route::fallback(function () {
     dd('Terror Page.');
+    // dd('Terror Page.');
 });
