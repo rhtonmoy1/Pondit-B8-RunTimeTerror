@@ -19,7 +19,7 @@ class ProductController extends Controller
         if($pageNumber = request('page')){
             $serialNo = $paginatePerPage * ($pageNumber-1) + 1;
         }
-        
+
         $products = Product::with('category')->latest()->paginate($paginatePerPage);
         return view('products.index', compact('products', 'serialNo'));
     }
@@ -34,7 +34,7 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        
+
         $data = [
             'category_id' => $request->category_id,
             'title' => $request->title,
@@ -57,7 +57,7 @@ class ProductController extends Controller
         $categories = Category::pluck('name', 'id')->toArray();
         $colors = Color::pluck('title', 'id')->toArray();
 
-        $selectedColors = $product->colors()->pluck('id')->toArray(); 
+        $selectedColors = $product->colors()->pluck('id')->toArray();
 
         return view('products.edit', compact('product', 'categories', 'colors', 'selectedColors'));
     }
@@ -111,7 +111,7 @@ class ProductController extends Controller
         return redirect()
             ->route('products.trash')
             ->withMessage('Restored Successfully!');
-    } 
+    }
 
     public function delete($id)
     {
@@ -122,7 +122,7 @@ class ProductController extends Controller
         return redirect()
             ->route('products.trash')
             ->withMessage('Deleted Successfully!');
-    } 
+    }
 
     public function downloadPdf()
     {
@@ -133,11 +133,11 @@ class ProductController extends Controller
 
     public function uploadImage($file){
         $fileName = date('y-m-d').'-'.time().'.'.$file ->getClientOriginalExtension();
-        // $file->move(storage_path('app/public/products'), $fileName);
+        $file->move(storage_path('app/public/products'), $fileName);
 
-        Image::make($file)
-                ->resize(200, 200)
-                ->save(storage_path() . '/app/public/products/' . $fileName);
+        // Image::make($file)
+        //         ->resize(200, 200)
+        //         ->save(storage_path() . '/app/public/products/' . $fileName);
 
         return $fileName;
     }

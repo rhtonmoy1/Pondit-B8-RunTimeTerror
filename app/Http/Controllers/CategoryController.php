@@ -86,7 +86,7 @@ class CategoryController extends Controller
         return redirect()
             ->route('categories.trash')
             ->withMessage('Restored Successfully!');
-    } 
+    }
 
     public function delete($id)
     {
@@ -96,7 +96,7 @@ class CategoryController extends Controller
         return redirect()
             ->route('categories.trash')
             ->withMessage('Deleted Successfully!');
-    } 
+    }
 
     public function downloadPdf()
     {
@@ -107,11 +107,11 @@ class CategoryController extends Controller
 
     public function uploadImage($file){
         $fileName = date('y-m-d').'-'.time().'.'.$file ->getClientOriginalExtension();
-        // $file->move(storage_path('app/public/categories'), $fileName);
+        $file->move(storage_path('app/public/categories'), $fileName);
 
-        Image::make($file)
-                ->resize(200, 200)
-                ->save(storage_path() . '/app/public/categories/' . $fileName);
+        // Image::make($file)
+        //         ->resize(200, 200)
+        //         ->save(storage_path() . '/app/public/categories/' . $fileName);
 
         return $fileName;
     }
