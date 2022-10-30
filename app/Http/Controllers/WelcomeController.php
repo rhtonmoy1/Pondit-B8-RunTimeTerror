@@ -25,6 +25,10 @@ class WelcomeController extends Controller
 
     public function productList(Category $category)
     {
+
+
+         
+
         return view('products', compact('category'));
     }
 

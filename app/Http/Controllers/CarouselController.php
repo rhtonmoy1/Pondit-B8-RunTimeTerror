@@ -85,7 +85,7 @@ class CarouselController extends Controller
         return redirect()
             ->route('carousels.trash')
             ->withMessage('Restored Successfully!');
-    }
+    } 
 
     public function delete($id)
     {
@@ -95,7 +95,7 @@ class CarouselController extends Controller
         return redirect()
             ->route('carousels.trash')
             ->withMessage('Deleted Successfully!');
-    }
+    } 
 
     public function downloadPdf()
     {
@@ -106,11 +106,11 @@ class CarouselController extends Controller
 
     public function uploadImage($file){
         $fileName = date('y-m-d').'-'.time().'.'.$file ->getClientOriginalExtension();
-        $file->move(storage_path('app/public/carousels'), $fileName);
+        // $file->move(storage_path('app/public/carousels'), $fileName);
 
-        // Image::make($file)
-        //         ->resize(1600, 500)
-        //         ->save(storage_path() . '/app/public/carousels/' . $fileName);
+        Image::make($file)
+                ->resize(1600, 500)
+                ->save(storage_path() . '/app/public/carousels/' . $fileName);
 
         return $fileName;
     }

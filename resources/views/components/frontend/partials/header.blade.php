@@ -1,5 +1,5 @@
- <!-- header section strats -->
-    <header class="header_section">
+<!-- header section strats -->
+ <header class="header_section">
       <div class="header_top">
         <div class="container-fluid">
           <div class="top_nav_container">
@@ -72,6 +72,14 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('testimonial') }}">Testimonial</a>
                   </li>
+
+                  <li class="nav-item d-flex">
+                        @auth
+                        <a class="nav-link" href="{{ url('/cart') }}">
+                            Cart [<span id="cartItemCount">{{ $cartItemCount }}</span>]
+                        </a>
+                        @endauth
+                    </li>
 
                   <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

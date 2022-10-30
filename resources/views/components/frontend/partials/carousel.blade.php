@@ -4,7 +4,7 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
         @for ($i = 0; $i < count($carousels); $i++)
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$i}}" 
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$i}}"
             @if ($i == 0)class="active" aria-current="true" @endif aria-label="Slide {{$i+1}}"></button>
         @endfor
 
@@ -12,9 +12,9 @@
     <div class="carousel-inner">
         @forelse ($carousels as $carousel)
             <div
-                class="carousel-item 
+                class="carousel-item
                 @if ($loop->first) active @endif
-                
+
                 ">
                 <img src="{{ asset('storage/carousels/' . $carousel->image) }}" class="d-block w-100" alt="...">
                 <div class="container">

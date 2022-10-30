@@ -8,6 +8,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,11 +25,62 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [WelcomeController::class, 'welcome']);
 Route::get('/categories/{category}/product', [WelcomeController::class, 'productList'])->name('frontend.products.index');
 Route::get('/products/{product}', [WelcomeController::class, 'productDetails'])->name('frontend.products.show');
+Route::get('/api/cart', function () {
+    return response()->json([
+        'data' => [
+            'product' => [
+                'id' => 1,
+                'title' => 'This is product 1'
+            ]
+        ]
+    ]);
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/cart-items', function () {
+
+    $cartItems = auth()->user()->cartItems;
+
+    $cartItems->load('product');
+
+    $data = [];
+    foreach ($cartItems as $value) {
+        $data[] =  [
+            'id' => $value->id,
+            'title' => $value->product->title,
+            'qty' => $value->qty,
+            'unitPrice' => $value->product->price,
+            'totalPrice' => $value->qty * $value->product->price
+        ];
+    }
+
+    return response()->json([
+        'status' => true,
+        'data' => $data
+    ]);
+});
+
+Route::delete('/cart-items/{cartItem}', function (Cart $cartItem) {
+    $cartItem->delete();
+    return response()->json([
+        'status' => true,
+        'message' => 'Successfully Deleted'
+    ]);
+});
+
 
 require __DIR__ . '/auth.php';
 
-
 Route::middleware('auth')->prefix('dashboard')->group(function () {
+
+    Route::get('/api/my-profile', function () {
+        return response()->json([
+            'myProfile' => auth()->user()
+        ]);
+    });
 
     Route::post('/products/{product}/comments', [CommentController::class, 'store'])->name('products.comments.store');
 
@@ -72,8 +124,8 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     });
 
     Route::post('/products/{product}/cart', [CartController::class, 'store'])->name('products.cart.store');
-
 });
+
 
 Route::get('/home', function () { return view('frontend.index'); })->name('index');
 Route::get('/product', function () { return view('frontend.product'); })->name('product');
@@ -83,8 +135,6 @@ Route::get('/about', function () { return view('frontend.about'); })->name('abou
 
 
 
-
 Route::fallback(function () {
-    dd('Terror Page.');
-    // dd('Terror Page.');
+    dd('Terror Page');
 });

@@ -1,13 +1,13 @@
 <?php
- 
+
 namespace App\View\Composers;
 
 use App\Models\Category;
 use Illuminate\View\View;
- 
+
 class FrontendComposer
 {
-    
+
     /**
      * Bind data to the view.
      *
@@ -18,8 +18,8 @@ class FrontendComposer
     {
         $categories = Category::all();
         $view->with([
-            'categories' => $categories
+            'categories' => $categories,
+            // 'cartItemCount' => auth()->user()->cartItems->count()
         ]);
     }
-   
 }
